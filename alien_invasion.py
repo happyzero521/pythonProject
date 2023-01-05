@@ -2,6 +2,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 import game_functions as gf
+from pygame.sprite import Group
 
 
 def run_game():
@@ -12,13 +13,13 @@ def run_game():
     pygame.display.set_caption("飞船游戏")
     # 创建飞船
     ship = Ship(ai_settings, screen)
-
+    # 创建存储子弹的编组
+    bullets = Group
     # 设置游戏主循环
     while True:
-        gf.check_events(ship)
+        gf.check_events(ship, bullets)
         ship.update()
-        gf.update_screen(ai_settings, screen, ship)
-
-
+        bullets.update()
+        gf.update_screen(ai_settings, screen, ship, bullets)
 # 启动游戏程序
 run_game()
