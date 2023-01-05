@@ -1,6 +1,6 @@
 import sys
 import pygame
-
+from bullet import Bullet
 
 def check_events(ship):
     # 监听按键和鼠标事件
@@ -13,7 +13,7 @@ def check_events(ship):
             check_keyup_events(event, ship)
 
 
-def check_keydown_events(event, ship):
+def check_keydown_events(event, ship, bullets):
     if event.key == pygame.K_RIGHT:
         ship.moving_right = True
     elif event.key == pygame.K_LEFT:
@@ -22,7 +22,8 @@ def check_keydown_events(event, ship):
         ship.moving_up = True
     elif event.key == pygame.K_DOWN:
         ship.moving_down = True
-
+    elif event.key == pygame.K_SPACE:
+        new_bullet = bullet(ai_settings, screen, ship,)
 
 def check_keyup_events(event, ship):
     if event.key == pygame.K_RIGHT:
