@@ -1,6 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 # 管理发射子弹的类
 class Bullet(Sprite):
     def __int__(self, ai_settings, screen, ship):
