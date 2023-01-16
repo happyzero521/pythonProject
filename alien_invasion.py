@@ -10,16 +10,17 @@ def run_game():
     pygame.init()
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_width))
-    pygame.display.set_caption("飞船游戏")
+    pygame.display.set_caption("外星人入侵")
     # 创建飞船
     ship = Ship(ai_settings, screen)
-    # 创建存储子弹的编组
-    bullets = Group
+    bullets = Group()
     # 设置游戏主循环
     while True:
-        gf.check_events(ship, bullets)
+        gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
         bullets.update()
         gf.update_screen(ai_settings, screen, ship, bullets)
+
+
 # 启动游戏程序
 run_game()
