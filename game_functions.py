@@ -60,8 +60,8 @@ def update_bullets(bullets):
 
 def fire_bullet(ai_settings, screen, ship, bullets):
     if len(bullets) < ai_settings.bullets_allowed:
-        new_bullet = Bullet(ai_settings, screen, ship)
-        bullets.add(new_bullet)
+        new_bullets = Bullet(ai_settings, screen, ship)
+        bullets.add(new_bullets)
 
 
 def create_fleet(ai_settings, screen, ship, aliens):
@@ -80,6 +80,7 @@ def get_number_rows(ai_settings, ship_height, alien_height):
     available_space_y = (ai_settings.screen_height - (3 * alien_height) - ship_height)
     number_rows = int(available_space_y / (2 * alien_height))
     return number_rows
+
 
 def get_number_aliens_x(ai_settings, alien_width):
     available_space_x = ai_settings.screen_width - 2 * alien_width
