@@ -4,6 +4,7 @@ from ship import Ship
 # from alien import Alien
 import game_functions as gf
 from pygame.sprite import Group
+from bullet import Bullet
 
 
 def run_game():
